@@ -44,3 +44,5 @@ export const newRequestSchema = z.object({
 			}),
 	}),
 });
+
+export const updateRequestSchema = '';

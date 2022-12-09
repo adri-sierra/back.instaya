@@ -2,7 +2,7 @@ import express from 'express';
 import { findRequestsByUser, saveRequest } from '@models/Request/queries';
 import { logger, validate } from '../../middlewares';
 import { hasSession } from '../../middlewares/authorization';
-import { newRequestSchema } from './schemas';
+import { newRequestSchema, updateRequestSchema } from './schemas';
 
 const router = express.Router();
 
@@ -36,5 +36,5 @@ router.post(
 		}
 	},
 );
-
+router.put("/update-by/service/:service",hasSession,validate(updateRequestSchema))
 export { router };
